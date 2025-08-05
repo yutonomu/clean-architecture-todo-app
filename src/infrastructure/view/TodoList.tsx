@@ -1,16 +1,7 @@
 'use client';
 
-import { Todo } from '../../domain/todo';
 import { Plus, Trash2, Check, Circle } from 'lucide-react';
-
-interface TodoListProps {
-  todos: Todo[];
-  newTodo: string;
-  onNewTodoChange: (value: string) => void;
-  onAddTodo: () => void;
-  onDeleteTodo: (id: string) => void;
-  onToggleComplete: (id: string) => void;
-}
+import { TodoListProps } from '../../interface-adapter/presenter/page';
 
 export default function TodoList({
   todos,

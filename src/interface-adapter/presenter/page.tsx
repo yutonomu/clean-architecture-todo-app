@@ -2,13 +2,22 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { LocalStorageTodoRepository } from '../infrastructure/localStorageTodoRepository';
-import { addTodo } from '../use-cases/addTodo';
-import { getTodos } from '../use-cases/getTodos';
-import { updateTodo } from '../use-cases/updateTodo';
-import { deleteTodo } from '../use-cases/deleteTodo';
-import { Todo } from '../domain/todo';
-import TodoList from '../infrastructure/components/TodoList';
+import { LocalStorageTodoRepository } from '../gateway/localStorageTodoRepository';
+import { addTodo } from '../../use-cases/addTodo';
+import { getTodos } from '../../use-cases/getTodos';
+import { updateTodo } from '../../use-cases/updateTodo';
+import { deleteTodo } from '../../use-cases/deleteTodo';
+import { Todo } from '../../domain/todo';
+import TodoList from '../../infrastructure/view/TodoList';
+
+export interface TodoListProps {
+  todos: Todo[];
+  newTodo: string;
+  onNewTodoChange: (value: string) => void;
+  onAddTodo: () => void;
+  onDeleteTodo: (id: string) => void;
+  onToggleComplete: (id: string) => void;
+}
 
 const todoRepo = new LocalStorageTodoRepository();
 

@@ -1,5 +1,5 @@
-import { TodoRepository } from '../use-cases/todoRepository';
-import { Todo } from '../domain/todo';
+import { TodoRepository } from '../../use-cases/todoRepository';
+import { Todo } from '../../domain/todo';
 
 const TODO_STORAGE_KEY = 'todos';
 
